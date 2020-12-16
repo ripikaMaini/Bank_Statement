@@ -1,0 +1,11 @@
+mat-form-field {
+  margin-right: 12px;
+}
+.center {
+  margin: auto;
+  width: 60%; 
+  padding: 10px;
+}
+.required{
+      color:red;
+}

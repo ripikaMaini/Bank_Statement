@@ -1,0 +1,12 @@
+.myclass{
+    text-align:right;
+}
+.navbar{
+    display:block !important
+}
+.nav-link{
+    display:contents !important
+}
+.bg-dark{
+    background-color: #FF8A00 !important
+}
