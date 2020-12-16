@@ -1,0 +1,21 @@
+<div class="col-md-4 container">
+  <br/>
+  <br/>
+  <div style="font-size:30px;text-align:center">
+   <b> Login to Internet Banking </b>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <div>
+   <b> User Name </b> <input type="text" name="username" [(ngModel)]="username">
+   <b> Password </b> <input type="password" name="password" [(ngModel)]="password">
+  </div>
+  <br/>
+    <span style="color:red; font-size:14px;font-style;text-align:center"> {{ errorMsg }} </span>
+    <br/>
+    
+  <button (click)=checkLogin() class="btn btn-success">
+    Login
+  </button>
+</div>

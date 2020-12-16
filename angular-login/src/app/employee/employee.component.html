@@ -1,0 +1,67 @@
+<form [formGroup]="myForm" (ngSubmit)="generate()">
+  <div class="col-md-6 container">
+    <br/>
+    <div>
+      Account ID : &nbsp;&nbsp;&nbsp;&nbsp;<input type="number" formControlName="accountId">
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-sm ">
+        From Amount : <input type="number" formControlName="fromAmount">
+      </div>
+      <div class="col-sm ">
+        To Amount : <input type="number" formControlName="toAmount">
+      </div>
+    </div>
+    <br/>
+    <div class="row">
+      <div class="col-sm ">
+        From Date :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker1" placeholder="Choose from date" formControlName="fromDate">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="col-sm ">
+        To Date :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker2" placeholder="Choose to date" formControlName="toDate">
+          <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+    <br/>
+    <div style="text-align: center;">
+      <button mat-raised-button color="primary" type="submit">Generate Statement</button>
+    </div>
+    <br/>
+     <br/>
+    <div style="text-align: center;" class="row" *ngIf="isStatement">
+      <table class="center table table-striped">
+        <thead>
+          <tr>
+            <th>Account Id</th>
+            <th>Account Type</th>
+            <th>Amount</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let employee of employees">
+            <td>{{employee.accountId}}</td>
+            <td>{{employee.accountType}}</td>
+            <td>{{employee.fromAmount}}</td>
+            <td>{{employee.fromDate}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align: center;color:red" class="row">
+      <div class="center col-sm-4 " >
+        {{errorMsg}}
+      </div>
+    </div>
+  </div>
+</form>

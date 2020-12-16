@@ -1,0 +1,12 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="row">
+      <div class="col-sm-4" style="color:white" *ngIf="loginService.isUserLoggedIn()">
+        <label> BANK STATEMENT</label>
+      </div>
+       <div class="myclass col-sm-8" style="color:white">
+        <a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link" style="color:white">LogOut</a>
+      </div>
+    </div>
+  </nav>
+</header>
